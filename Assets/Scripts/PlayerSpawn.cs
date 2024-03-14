@@ -7,8 +7,16 @@ public class PlayerSpawn : MonoBehaviour
 
     [Tooltip("Define where the player started the level"), ReadOnlyInspector]
     public Vector3 initialSpawnPosition;
+    public VectorVariable lastCheckpoint;
     private void Awake()
-    {     
+    {   
+        //lastCheckpoint.CurrentValue = null;  
+        if(lastCheckpoint.CurrentValue != null) {
+            transform.position = (Vector3) lastCheckpoint.CurrentValue;
+        } else  {
+            lastCheckpoint.CurrentValue = transform.position;
+        }
+
         currentSpawnPosition = gameObject.transform.position;
         initialSpawnPosition = gameObject.transform.position;
     }
