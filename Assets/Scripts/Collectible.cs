@@ -13,6 +13,7 @@ public class Collectible : MonoBehaviour
     private float finalAngle;
     private float rotationOffset = 15f;
     private float oscillationSpeed = 1.5f;
+    public bool canBeDestroyedOnContact = true;
 
     private void Awake()
     {
@@ -29,13 +30,13 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && canBeDestroyedOnContact)
         {
             Picked();
         }
     }
 
-    private void Picked()
+    public void Picked()
     {
         GameObject effect = Instantiate(collectedEffect, transform.position, transform.rotation);
         // Destroy effect after its animation ends playing
