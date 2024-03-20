@@ -5,6 +5,17 @@ public class BlockHit : MonoBehaviour {
 
     public int MaxHits = -1;
     private bool isAnimating = false;
+
+    public SpriteRenderer sr;
+
+    public bool isHidden = false;
+
+    private void Awake() {
+        if (isHidden) {
+            sr.color = Color.clear;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.CompareTag("Player") && !isAnimating && MaxHits != 0) {
             Vector3 upDirection = transform.TransformDirection(Vector3.up);
@@ -17,7 +28,7 @@ public class BlockHit : MonoBehaviour {
     }
     IEnumerator Hit() {
         isAnimating = true;
-        Vector3 endPosition = transform.position + Vector3.up = 0.5f;
+        Vector3 endPosition = transform.position + Vector3.up * 0.5f;
         yield return transform.MoveBackAndForth(endPosition);
         isAnimating = false;
         MaxHits--;
