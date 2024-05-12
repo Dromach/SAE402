@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fd7fa84cf441248abd41f4e6a9c722, type: 3}
+  m_Name: Piece
+  m_EditorClassIdentifier: 
+  title: Piece
+  value: 50
+  audioClip: {fileID: 8300000, guid: 01b20bbbf1e61064b9b967d9a458ec58, type: 3}
+  sprite: {fileID: -728133340, guid: e141b5d182ad1c74fb6c5bd0a7dc4fd2, type: 3}
+  DeveloperDescription: 
+  onPickUpAudio: {fileID: 11400000, guid: cdb31aea211f71549a57205694811885, type: 2}
+  onPickUpValue: {fileID: 11400000, guid: 3f0766695e4e1064ba3f4c4d2df7f35c, type: 2}
